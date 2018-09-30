@@ -5,11 +5,12 @@ const List = ({ todos, name }) => (
             <h2>{name}</h2>
             <ul>
                 {
-                    
+
                 todos.map( item => <li key={item.id}>
                 {item.name}
                 </li>)
-            }
+                
+                }
             </ul>
         </div>
 )

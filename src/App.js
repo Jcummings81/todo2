@@ -7,12 +7,19 @@ class App extends Component {
       todos: []
    }
 
+   addItem = (name) => {
+     const id = Math.floor(( 1 + Math.random()) * 0x1000 )
+     const { todos } = this.state
+     const todo = { name: name, id: id, complete: false }
+     this.setState({ todos: [...todos, todo]})
+   }
+
   render() {
     return (
       <div>
-       <Form />
+       <Form addTodo={this.addItem} />
        <List 
-         name="Todo List"
+         name="Ninja Missions"
          todos={this.state.todos} />
       </div>
     );
